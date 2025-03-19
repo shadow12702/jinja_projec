@@ -1,4 +1,7 @@
-<script
-	type="module"
-	src="{{ url_for('static', filename='js/main_show.js') }}"
-	defer></script>
+<script src="{{ url_for('static', filename='js/main_show.js') }}" defer></script>
+{% if active_page == 'dashboard' %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+{% endif %}
+{% if active_page == 'user' %}
+<script src="{{ url_for('static', filename='js/user.js') }}" defer></script>
+{% endif %}

@@ -1,75 +1,86 @@
-<div class="sidebar">
-		<div class="logo">
-			<img
-				src="{{ url_for('static', filename='images/logoOSAS.png') }}"
-				alt="logoOSAS" />
-			<h2>OSAS Company</h2>
-		</div>
+<div class="sidebar" id="sidebar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logoOSAS.png') }}" alt="logoOSAS" />
+        <h2>OSAS Company</h2>
+    </div>
+    
+    <div class="sidebar-menu">
+        <!-- Dashboard -->
+        <a href="{{ url_for('dashboard') }}" class="menu-item {% if active_page == 'dashboard' %}active{% endif %}">
+            <div class="menu-header">
+                <i class="ri-dashboard-line icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </div>
+        </a>
+        
+        <!-- User Menu -->
+        <div class="menu-item" id="userItem">
+            <div class="menu-header" id="userHeader">
+                <i class="ri-user-line icon"></i>
+                <span class="menu-title">User</span>
+                <i class="ri-arrow-right-s-line chevron" id="userChevron"></i>
+            </div>
+            <div class="dropdown-content" id="userDropdown">
+                <a href="{{ url_for('show_user') }}" class="dropdown-item">All Users</a>
+                <a href="#" class="dropdown-item">Admin</a>
+                <a href="#" class="dropdown-item">Customer</a>
+            </div>
+        </div>
+        
+        <!-- Blog Menu -->
+        <div class="menu-item" id="blogItem">
+            <div class="menu-header" id="blogHeader">
+                <i class="ri-file-list-line icon"></i>
+                <span class="menu-title">Blog</span>
+                <i class="ri-arrow-right-s-line chevron" id="blogChevron"></i>
+            </div>
+            <div class="dropdown-content" id="blogDropdown">
+                <a href="#" class="dropdown-item">List</a>
+                <a href="#" class="dropdown-item">Detail</a>
+                <a href="#" class="dropdown-item">Create</a>
+                <a href="#" class="dropdown-item">Edit</a>
+            </div>
+        </div>
 
-		<a href="{{ url_for('dashboard') }}" class="menu-item menu-header">
-			<i class="ri-dashboard-line"></i>
-			<div class="menu-title">Dashboard</div>
-		</a>
-		<div class="menu-item" id="userItem">
-			<div class="menu-header" id="userHeader">
-				<div class="icon user">📦</div>
-				<div class="menu-title">User</div>
-				<span class="chevron right" id="userChevron"></span>
-			</div>
-			<div class="dropdown-content" id="userDropdown">
-				<div class="dropdown-item">Admin</div>
-				<div class="dropdown-item">Customer</div>
-			</div>
-		</div>
-		<div class="menu-item" id="blogItem">
-			<div class="menu-header" id="blogHeader">
-				<div class="icon blog">📄</div>
-				<div class="menu-title">Blog</div>
-				<span class="chevron right" id="blogChevron"></span>
-			</div>
-			<div class="dropdown-content" id="blogDropdown">
-				<div class="dropdown-item">List</div>
-				<div class="dropdown-item">Detail</div>
-				<div class="dropdown-item">crete</div>
-				<div class="dropdown-item">edit</div>
-			</div>
-		</div>
+        <!-- Analytics Menu -->
+        <div class="menu-item" id="analyticItem">
+            <div class="menu-header" id="analyticHeader">
+                <i class="ri-bar-chart-line icon"></i>
+                <span class="menu-title">Work Analytics</span>
+                <i class="ri-arrow-right-s-line chevron" id="analyticChevron"></i>
+            </div>
+            <div class="dropdown-content" id="analyticDropdown">
+                <a href="#" class="dropdown-item">Load vs Cores</a>
+                <a href="#" class="dropdown-item">Transactions per Sec</a>
+                <a href="#" class="dropdown-item">Log Switches</a>
+            </div>
+        </div>
 
-		<!-- analytic -->
-		<div class="menu-item" id="analyticItem">
-			<div class="menu-header" id="analyticHeader">
-				<div class="icon analytic">📦</div>
-				<div class="menu-title">Work Aalytic</div>
-				<span class="chevron right" id="analyticChevron"></span>
-			</div>
-			<div class="dropdown-content" id="analyticDropdown">
-				<div class="dropdown-item">Load vs Cores</div>
-				<div class="dropdown-item">Transactions per Sec</div>
-				<div class="dropdown-item">Log Switches</div>
-			</div>
-		</div>
+        <!-- SQL Analytics Menu -->
+        <div class="menu-item" id="sqlItem">
+            <div class="menu-header" id="sqlHeader">
+                <i class="ri-database-2-line icon"></i>
+                <span class="menu-title">SQL Analytics</span>
+                <i class="ri-arrow-right-s-line chevron" id="sqlChevron"></i>
+            </div>
+            <div class="dropdown-content" id="sqlDropdown">
+                <a href="#" class="dropdown-item">SQL Module By CPU Time</a>
+                <a href="#" class="dropdown-item">SQL Module By User I/O</a>
+            </div>
+        </div>
 
-	<div class="menu-item" id="sqlItem">
-			<div class="menu-header" id="sqlHeader">
-				<div class="icon sql">📦</div>
-				<div class="menu-title">SQL Aalytic</div>
-				<span class="chevron right" id="sqlChevron"></span>
-			</div>
-			<div class="dropdown-content" id="sqlDropdown">
-				<div class="dropdown-item">SQL Module By CPU Time</div>
-				<div class="dropdown-item">SQL Module By User I/O</div>
-			</div>
-		</div>
-
-		<div class="menu-item" id="orderItem">
-			<div class="menu-header" id="orderHeader">
-				<div class="icon order">🛒</div>
-				<div class="menu-title">Order</div>
-				<span class="chevron right" id="orderChevron"></span>
-			</div>
-			<div class="dropdown-content" id="orderDropdown">
-				<div class="dropdown-item">All Orders</div>
-			</div>
-		</div>
-	</div>		<!-- analytic -->
-	
+        <!-- Order Menu -->
+        <div class="menu-item" id="orderItem">
+            <div class="menu-header" id="orderHeader">
+                <i class="ri-shopping-cart-line icon"></i>
+                <span class="menu-title">Order</span>
+                <i class="ri-arrow-right-s-line chevron" id="orderChevron"></i>
+            </div>
+            <div class="dropdown-content" id="orderDropdown">
+                <a href="#" class="dropdown-item">All Orders</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sidebar-spacer"></div>
+</div>

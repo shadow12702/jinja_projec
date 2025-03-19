@@ -1,0 +1,68 @@
+/* Flash Messages */
+.flash-messages {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.flash-message {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flash-message.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+
+.flash-message.success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+.flash-message.info {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.flash-message .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: var(--spacing-md);
+    color: inherit;
+    opacity: 0.7;
+}
+
+.flash-message .close-btn:hover {
+    opacity: 1;
+}
+
+/* Page not found / Error pages */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.error-container p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}

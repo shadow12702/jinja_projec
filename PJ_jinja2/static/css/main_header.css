@@ -1,62 +1,118 @@
-
-/* Main Content Area */
-.main-content {
-    margin-left: 250px;
-    padding: 30px;
-    width: calc(100% - 250px);
-    
-}
-
 /* Header Section */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 0;
     margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
 }
 
-.header .search {
+.header-container {
     display: flex;
     align-items: center;
-    background: white;
-    border-radius: 8px;
-    padding: 8px 15px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.header .search input {
-    border: none;
-    outline: none;
-    padding: 5px;
     width: 100%;
-    font-size: 14px;
 }
 
-.header .search i {
-    color: #999;
-    margin-right: 10px;
+/* Sidebar toggle button */
+.sidebar-toggle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    display: left;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    margin: 15px;
+    transition: background-color 0.2s;
 }
 
-.header .user-profile {
+.sidebar-toggle:hover {
+    background-color: var(--primary-dark);
+}
+
+.sidebar-toggle i {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.sidebar.collapsed ~ .main-content .sidebar-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Page title */
+.page-title h4 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Spacer to push user info to right */
+.spacer {
+    flex-grow: 1;
+}
+
+/* User profile section */
+.user-profile {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
-.header .user-profile img {
-    width: 40px;
-    height: 40px;
+.user-profile img {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
 }
 
-.header .user-profile .user-info h4 {
-    font-size: 16px;
-    margin-bottom: 2px;
+.user-profile .user-info {
+    text-align: right;
 }
 
-.header .user-profile .user-info p {
+.user-profile .user-info h4 {
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    color: var(--text-primary);
+}
+
+.user-profile .user-info p {
     font-size: 12px;
-    color: #777;
-    margin-top: 0;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    background-color: #f5f5f5;
+}
+
+.action-icon:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .user-profile .user-info {
+        display: none;
+    }
+    
+    .page-title h4 {
+        font-size: 16px;
+    }
 }

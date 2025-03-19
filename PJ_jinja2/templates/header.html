@@ -1,14 +1,32 @@
-<div class="search">
-    <i class="ri-search-line"></i>
-    <input type="text" placeholder="Search users..." />
-</div>
-
-<div class="user-profile">
-    <img
-        src="{{ url_for('static', filename='images/logoOSAS.png') }}"
-        alt="Admin Profile" />
-    <div class="user-info">
-        <h4>OSAS</h4>
-        <p>osas@osas.com</p>
+<div class="header-container">
+    <!-- Page title with sidebar toggle button -->
+    <div class="page-title-section">
+        <!-- Sidebar toggle button -->
+        <div style="display: flex; align-items: center;">
+            <div class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+                <i class="ri-menu-fold-line" id="toggleIcon"></i>
+            </div>
+            <div>
+                <h4>{{ title|default('Dashboard') }}</h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="user-profile">
+        <div class="user-info">
+            <h4>{{ session.get('username', 'Admin') }}</h4>
+            <p>{{ session.get('email', 'admin@example.com') }}</p>
+        </div>
+        <img src="{{ url_for('static', filename='../images/logoOSAS.png') }}" alt="Admin Profile" />
+        <div class="user-actions">
+            <a href="{{ url_for('show_profile') }}" class="action-icon" title="Profile">
+                <i class="ri-user-settings-line"></i>
+            </a>
+            <a href="{{ url_for('logout') }}" class="action-icon" title="Logout">
+                <i class="ri-logout-box-line"></i>
+            </a>
+        </div>
     </div>
 </div>

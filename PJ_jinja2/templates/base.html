@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		{% include "libary_css.html" %}
-	</head>
-	<body>
-		<div class="containers">
-			{% include "sidebar.html" %}
-			<div class="main-content">
-				<!-- Header with search and profile -->
-				<div class="header">{% include "header.html" %}</div>
-				<div class="content">
-					{% block content %}{% endblock %}
-				</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	{% include "libary_js.html" %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% if title %}{{ title }} - Apartment Management{% else %}Apartment Management{% endif %}{% endblock %}</title>
+    {% include "libary_css.html" %}
+</head>
+<body>
+    <div class="containers">
+        {% include "sidebar.html" %}
+        <div class="main-content">
+            <div class="header">{% include "header.html" %}</div>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash-message {{ category }}">
+                                {{ message }}
+                                <button class="close-btn">&times;</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    {% include "libary_js.html" %}
+</body>
 </html>
