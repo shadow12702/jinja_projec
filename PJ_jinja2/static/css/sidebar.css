@@ -122,14 +122,19 @@ a {
 .menu-item {
 	height: auto;
 	position: relative;
-	background-color: #f0f0f0;
+	/* background-color: #f0f0f0; */
 	margin-bottom: 1px;
 	border-radius: 8px;
 	cursor: pointer;
 	transition: all 0.3s;
 	border-left: 4px solid transparent;
+	align-items: center;
+	padding: 15px 20px;
 }
 
+.menu-item:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+}
 .menu-header {
 	display: flex;
 	align-items: center;
@@ -141,7 +146,7 @@ a {
 .icon {
 	width: 24px;
 	height: 24px;
-	background-color: #e0e0e0;
+	/* background-color: #e0e0e0; */
 	border-radius: 6px;
 	display: flex;
 	align-items: center;
@@ -152,7 +157,7 @@ a {
 
 .menu-title {
 	font-size: 14px;
-	color: #555;
+	color: #ffffff;
 	font-weight: 500;
 	flex-grow: 1;
 }
@@ -176,7 +181,7 @@ a {
 
 .dropdown-content {
 	display: none;
-	background-color: #fff;
+	/* background-color: #fff; */
 	position: relative;
 	border-left: 1px solid #f0f0f0;
 	margin-left: 20px;
@@ -202,39 +207,39 @@ a {
 }
 
 .dropdown-item:hover {
-	background-color: #fafafa;
+	/* background-color: #fafafa; */
 }
 
 .menu-item.active {
 	padding-bottom: 0.5rem;
-	background-color: #e8e8e8;
+	/* background-color: #e8e8e8; */
 }
 
 .icon.user {
-	background-color: #e0e0e0;
+	/* background-color: #e0e0e0; */
 }
 
 .icon.product {
-	background-color: #e2e8f0;
+	/* background-color: #e2e8f0; */
 }
 
 .icon.order {
-	background-color: #e6e6fa;
+	/* background-color: #e6e6fa; */
 }
 
 .icon.invoice {
-	background-color: #f0e6e6;
+	/* background-color: #f0e6e6; */
 }
 
 .icon.blog {
-	background-color: #e6f0e6;
+	/* background-color: #e6f0e6; */
 }
 .icon.analytic {
-	background-color: #e6f0e6;
+	/* background-color: #e6f0e6; */
 }
 .icon.users {
-	background-color: #e6f0e6;
+	/* background-color: #e6f0e6; */
 }
 .icon.sql {
-	background-color: #e6f0e6;
+	/* background-color: #e6f0e6; */
 }

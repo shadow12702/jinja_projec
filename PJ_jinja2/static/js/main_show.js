@@ -166,12 +166,13 @@ dropdownItems.forEach((item) => {
 			const showBox = document.getElementById("showBox");
 			const overlay = document.getElementById("overlay");
 			const closeBox = document.getElementById("closeBox");
-	
 			// Khi nhấn nút, hiển thị hộp
+
+            
 			showBox.addEventListener("click", () => {
 				overlay.style.display = "flex";
 			});
-	
+            
 			// Khi nhấn nút đóng, ẩn hộp
 			closeBox.addEventListener("click", () => {
 				overlay.style.display = "none";
