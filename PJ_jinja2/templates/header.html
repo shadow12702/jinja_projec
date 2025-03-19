@@ -1,32 +1,82 @@
 <div class="header-container">
-    <!-- Page title with sidebar toggle button -->
-    <div class="page-title-section">
-        <!-- Sidebar toggle button -->
-        <div style="display: flex; align-items: center;">
-            <div class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
-                <i class="ri-menu-fold-line" id="toggleIcon"></i>
-            </div>
-            <div>
-                <h4>{{ title|default('Dashboard') }}</h4>
-            </div>
-        </div>
-    </div>
-    
-    <div class="spacer"></div>
-    
-    <div class="user-profile">
-        <div class="user-info">
-            <h4>{{ session.get('username', 'Admin') }}</h4>
-            <p>{{ session.get('email', 'admin@example.com') }}</p>
-        </div>
-        <img src="{{ url_for('static', filename='../images/logoOSAS.png') }}" alt="Admin Profile" />
-        <div class="user-actions">
-            <a href="{{ url_for('show_profile') }}" class="action-icon" title="Profile">
-                <i class="ri-user-settings-line"></i>
-            </a>
-            <a href="{{ url_for('logout') }}" class="action-icon" title="Logout">
-                <i class="ri-logout-box-line"></i>
-            </a>
-        </div>
-    </div>
+	<!-- Page title with sidebar toggle button -->
+	<div class="page-title-section">
+		<!-- Sidebar toggle button -->
+		<div style="display: flex; align-items: center">
+			<div class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+				<i class="ri-menu-fold-line" id="toggleIcon"></i>
+			</div>
+			<div>
+				<h4>{{ title|default('Dashboard') }}</h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="spacer"></div>
+
+	<div class="box_hidden ">
+		<button class="showBox"id="showBox">Select Data</button>
+		<!-- Hộp hiển thị -->
+		<div class="overlay" style="display: none" id="overlay">
+			<div class="box">
+				<h2>Hệ thống Dropdown Nối Tiếp</h2>
+
+				<div class="dropdown-container">
+					<div class="dropdown-group">
+						<label for="firstDropdown">Dropdown thứ nhất:</label>
+						<select id="firstDropdown">
+							<option value="" selected disabled>Vui lòng chọn</option>
+							<option value="option1">Tùy chọn 1</option>
+							<option value="option2">Tùy chọn 2</option>
+							<option value="option3">Tùy chọn 3</option>
+						</select>
+					</div>
+
+					<div id="secondDropdown" class="dropdown-group">
+						<label for="secondSelect">Dropdown thứ hai:</label>
+						<select id="secondSelect">
+							x``
+							<option value="" selected disabled>Vui lòng chọn</option>
+							<option value="suboption1">Tùy chọn phụ 1</option>
+							<option value="suboption2">Tùy chọn phụ 2</option>
+							<option value="suboption3">Tùy chọn phụ 3</option>
+						</select>
+					</div>
+
+					<div class="dropdown-group" style="display: flex">
+						<button id="okButton">OK</button>
+						<button id="clearButton">Xóa lựa chọn</button>
+					</div>
+				</div>
+
+				<div
+					id="selectionResult"
+					style="margin-top: 20px; font-weight: bold"></div>
+				<div id="errorMessage" class="message error">
+					Vui lòng chọn Tùy chọn 1 ở cả hai dropdown để tiếp tục.
+				</div>
+				<button class="close-btn" id="closeBox">Đóng</button>
+			</div>
+		</div>
+	</div>
+	<div class="user-profile">
+		<div class="user-info">
+			<h4>{{ session.get('username', 'Admin') }}</h4>
+			<p>{{ session.get('email', 'admin@example.com') }}</p>
+		</div>
+		<img
+			src="{{ url_for('static', filename='../images/logoOSAS.png') }}"
+			alt="Admin Profile" />
+		<div class="user-actions">
+			<a
+				href="{{ url_for('show_profile') }}"
+				class="action-icon"
+				title="Profile">
+				<i class="ri-user-settings-line"></i>
+			</a>
+			<a href="{{ url_for('logout') }}" class="action-icon" title="Logout">
+				<i class="ri-logout-box-line"></i>
+			</a>
+		</div>
+	</div>
 </div>
